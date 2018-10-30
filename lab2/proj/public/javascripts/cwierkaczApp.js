@@ -9,3 +9,9 @@ app.controller('mainController',	function($scope){
 		};
 });
 
+app.use(session({secret:	'secret	token'}));
+app.use(passport.initialize());
+app.use(passport.session());
+var	initPassport	=	require('./config/passport-init');
+initPassport(passport);
+app.use('/auth',	auth);

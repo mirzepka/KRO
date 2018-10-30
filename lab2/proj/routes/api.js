@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 var Post = mongoose.model('Post')
 var	session	=	require('express-session');
 var	passport	=	require('passport');
-var	auth	=	require('./routes/auth')(passport);
+var	auth	=	require('./auth')(passport);
 router.route('/posts')
 	.get(
 		function(req,res){
